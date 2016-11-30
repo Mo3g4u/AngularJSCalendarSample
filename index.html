@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="calendarDemo">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJSCalendarSample</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body  ng-controller="calendarCtrl">
+
+<h1>AngularJSCalendarSample</h1>
+TargetMonth:{{ targetYear }}/{{ targetMonth }}
+
+<p><button ng-click="prev()">prev</button><button ng-click="now()">now</button><button ng-click="next()">next</button></p>
+
+Today:{{ year }}/{{ month }}/{{ day }}
+
+<hr>
+<pre>
+  {{ calendarData | json }}
+</pre>
+<hr>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap.min.js"></script>
+<script type="text/javascript" src="./calendar.js"></script>
+
+</body>
+</html>
