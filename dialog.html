@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h3 class="modal-title">Modal Calendar</h3>
+</div>
+<div class="modal-body">
+    <p>{{ targetYear }}/{{ targetMonth }}</p>
+    <p><button ng-click="prev()">prev</button><button ng-click="now()">now</button><button ng-click="next()">next</button></p>
+    <table class="table table-bordered">
+        <tr>
+            <td class="danger">日</td>
+            <td>月</td>
+            <td>火</td>
+            <td>水</td>
+            <td>木</td>
+            <td>金</td>
+            <td class="info">土</td>
+        </tr>
+        <tr ng-repeat="row in calendarData">
+            <td ng-repeat="tmp in row" ng-class="classSelect(tmp.dow)">{{ tmp.day }}</td>
+        </tr>
+    </table>
+</div>

@@ -2,7 +2,7 @@
  * Created by takeuchi on 2016/12/01.
  */
 
-var MyController = function($scope, $http){
+var MyController = function($scope, $http, $uibModal){
 
     var $uri = './backendPHP/index.php';
 
@@ -56,8 +56,15 @@ var MyController = function($scope, $http){
         }
     };
 
+    $scope.openModal = function(){
+        var modalInstance = $uibModal.open({
+            templateUrl: 'dialog.html',
+            scope      : $scope
+        });
+    };
+
     $scope.setCalendarData();
 };
 
-var appModule = angular.module('calendarDemo', []);
-appModule.controller('calendarCtrl', MyController);
+var appModule = angular.module('calendarDemo', ['ui.bootstrap']);
+appModule.controller('calendarCtrl', [ '$scope', '$http', '$uibModal', MyController]);
