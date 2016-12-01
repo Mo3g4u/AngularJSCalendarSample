@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="calendarDemo">
+<html lang="ja" ng-app="calendarDemo">
 <head>
     <meta charset="UTF-8">
     <title>AngularJSCalendarSample</title>
@@ -8,10 +8,47 @@
 </head>
 <body  ng-controller="calendarCtrl">
 
-<h1>AngularJSCalendarSample</h1>
-TargetMonth:{{ targetYear }}/{{ targetMonth }}
+<h1>AngularJS CalendarSample</h1>
 
-<p><button ng-click="prev()">prev</button><button ng-click="now()">now</button><button ng-click="next()">next</button></p>
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-4">
+        <h2>{{ targetYear }}/{{ targetMonth }}</h2>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2">
+        <p><button ng-click="prev()">prev</button><button ng-click="now()">now</button><button ng-click="next()">next</button></p>
+    </div>
+    <div class="col-md-9">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <table class="table table-bordered">
+            <tr>
+                <td class="danger">日</td>
+                <td>月</td>
+                <td>火</td>
+                <td>水</td>
+                <td>木</td>
+                <td>金</td>
+                <td class="info">土</td>
+            </tr>
+            <tr ng-repeat="row in calendarData">
+                <td ng-repeat="tmp in row" ng-class="classSelect(tmp.dow)">{{ tmp.day }}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-9">
+    </div>
+</div>
 
 Today:{{ year }}/{{ month }}/{{ day }}
 
@@ -24,8 +61,6 @@ Today:{{ year }}/{{ month }}/{{ day }}
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.9/angular.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap.min.js"></script>
-<script type="text/javascript" src="./calendar.js"></script>
-
+<script type="text/javascript" src="calendar.js"></script>
 </body>
 </html>
